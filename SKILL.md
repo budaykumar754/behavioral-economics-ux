@@ -1,8 +1,8 @@
 ---
 name: behavioral-economics-ux
-description: Apply behavioral-economics frameworks to UX so intention becomes action. Trigger on behavioral economics, intention-action gap, 3B framework, COM-B, Fogg Behavior Model, EAST, nudge, choice architecture, friction audit, conversion drop-off diagnosis, or when a flow has high intent but low completion.
+description: Apply behavioral-economics frameworks to UX so intention becomes action. Trigger on behavioral economics, intention-action gap, 3B, COM-B, Fogg, EAST, nudge, friction audit, conversion drop-off, or high intent with low completion. Requires project context (PRD, specs, Figma, screenshots, chat summary, or a project folder). If none is given, stop and run intake questions before analyzing.
 metadata:
-  version: "1.0"
+  version: "1.1"
   source: Distilled from NN/G Behavioral Economics for UX plus COM-B, Fogg, 3B, and EAST
 ---
 
@@ -18,17 +18,34 @@ Use it when a flow has drop-off, abandoned carts, unfinished signup, skipped set
 
 Do not use it to justify dark patterns, hidden fees, fake scarcity, or forced continuity. If the intervention helps the business and harms the user, reject it.
 
-## Gather before starting
+## Context gate (do this first)
 
-Ask only for what is missing:
+Do not invent a product or flow. Do not run 3B/COM-B/Fogg/EAST on a one-line ask.
 
-- Target behavior (what completion looks like)
-- Flow or surface (screens, emails, onboarding, checkout)
-- Evidence of the gap (analytics, session recordings, support tickets, usability findings)
-- Audience and context (first-time vs returning, high-stakes vs casual)
-- Constraint on ethics and brand (what you will not do)
+**Accepted inputs** — any one can start the work; more is better:
 
-If the target behavior is vague ("increase signups"), force specificity before analysis.
+- Chat history or a project summary already in the thread
+- PRD, one-pager, or designer/developer spec
+- Figma file, frames, or design-system file
+- Screenshots or a recording of the full flow
+- Project folder with screens, components, and assets
+- Analytics, session recordings, or support tickets
+
+Scan the thread and workspace for these before asking. If Figma or a folder is available, inspect the relevant frames/screens first so you do not re-ask what the artifacts already show.
+
+### If context is missing
+
+Stop. Do not produce the 9-section audit.
+
+1. Read `references/intake.md`.
+2. Ask a short mixed batch (3–5 questions) — multiple-choice plus one or two open-ended.
+3. Prefer a structured question tool (`ask_user_question` or the host equivalent) when it exists.
+4. Always offer a way to paste or attach artifacts instead of answering.
+5. After answers, write a 5-line **Context lock** (product, surface, target behavior, evidence, open assumptions) and only then start the workflow.
+
+Minimum to proceed: product/surface + one specific target behavior + either a step list or screens to derive one + a stated problem (drop-off, non-start, regret, or unknown).
+
+If the user insists on a generic example, mark every section **provisional** and still force a specific target behavior.
 
 ## Choose a framework
 
@@ -124,7 +141,7 @@ Diagnose which of the six is missing before designing.
 
 ## Output format
 
-Return work in this order:
+Start with a **Context lock** (5 lines). Then return work in this order:
 
 1. Target behavior — one specific sentence
 2. Behavior map — numbered actual steps
@@ -150,6 +167,8 @@ See `references/ethics-and-sludge.md` when the request smells like persuasion-at
 
 ## Avoid
 
+- Running the audit on a one-line ask with no product, screens, or spec
+- Inventing screens, copy, or metrics the user did not provide
 - Diagnosing "users need more education" as the first answer
 - Adding benefits while leaving the biggest barrier in place
 - Targeting five behaviors in one pass
